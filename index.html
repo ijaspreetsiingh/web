@@ -2169,11 +2169,13 @@
         </div>
       </div>
       <div class="form-row">
-        <div name="message" class="input-data textarea">
-          <textarea name="message" rows="8" cols="80" required></textarea>
+        <div class="input-data textarea">
+<!--           <textarea name="message" rows="8" cols="80" required></textarea>
           <br />
           <div  class="underline"></div>
-          <label  name="message" for="">Write your message</label>
+          <label  name="message" for="">Write your message</label> -->
+           <textarea  name="Message" class="form-control" id="Message" placeholder="Message"
+          required=""></textarea>
           <br />
           <div class="form-row submit-btn">
             <div class="input-data">
@@ -2194,7 +2196,7 @@
     form.addEventListener('submit', e => {
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Thanks for Feedback us..! We Will Contact You Soon..."))
+        .then(response => alert("Thanks for Feedback me..! I Will Response You Soon..."))
         .catch(error => console.error('Error!', error.message))
     })
   </script>
