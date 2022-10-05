@@ -2143,10 +2143,10 @@
     <div class="contact" id="contact" class="title reveal">
       <div class="text">Feedback</div>
     </div>
-    <form action="file.php" method="post">
+    <form action="" method="post" name="form">
       <div class="form-row">
         <div class="input-data">
-          <input type="text" name="NAME" required>
+          <input type="text" name="Name" required>
           <div class="underline"></div>
           <label for="">First Name</label>
         </div>
@@ -2158,12 +2158,12 @@
       </div>
       <div class="form-row">
         <div class="input-data">
-          <input type="email" name="email" required>
+          <input type="email" name="Sender" required>
           <div class="underline"></div>
           <label for="">Email Address</label>
         </div>
         <div class="input-data">
-          <input type="text" name="location" required>
+          <input type="text" name="Subject" required>
           <div class="underline"></div>
           <label for="">location</label>
         </div>
@@ -2185,6 +2185,21 @@
       </div>
     </form>
   </div>
+
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby1hycEtBt2ToqEUwY6HXNAgL0BdePvZskMqKkYHkxWX46s_uyB2qu5EBVtvaHaAeZqtg/exec'
+    const form = document.forms['form']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thanks for Feedback us..! We Will Contact You Soon..."))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+
 
 
   <footer class="footer">
